@@ -1,0 +1,99 @@
+Pillu..
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Pillu ❤️</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    font-family: Arial;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+
+    /* YOUR PHOTO AS BACKGROUND */
+    background: url('pillu.jpg') center/cover no-repeat;
+}
+
+.overlay{
+    background: rgba(0,0,0,0.5);
+    position:absolute;
+    width:100%;
+    height:100%;
+}
+
+.card{
+    position:relative;
+    z-index:2;
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    text-align:center;
+    width:280px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+h1{
+    color:#ff4b6e;
+}
+
+button{
+    padding:10px 20px;
+    border:none;
+    border-radius:20px;
+    background:#ff4b6e;
+    color:white;
+    cursor:pointer;
+}
+
+.heart{
+    position:absolute;
+    animation: float 5s linear infinite;
+}
+
+@keyframes float{
+    0%{transform:translateY(100vh);}
+    100%{transform:translateY(-10vh);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="overlay"></div>
+
+<div class="card">
+    <h1>Pillu ❤️</h1>
+    <p id="text"></p>
+
+    <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" width="140">
+
+    <br><br>
+
+    <button onclick="love()">Click Me 💌</button>
+</div>
+
+<script>
+
+let msg = "You are my smile, my happiness, my everything Pillu ❤️";
+let i = 0;
+
+function type(){
+    if(i < msg.length){
+        document.getElementById("text").innerHTML += msg.charAt(i);
+        i++;
+        setTimeout(type,40);
+    }
+}
+type();
+
+function love(){
+    alert("I Love You Forever Pillu 😘💖");
+}
+
+// floating hearts
+setInterval(()=>{
+    let heart =
